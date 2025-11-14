@@ -81,7 +81,7 @@ export default function ExpenseForm({ onAddExpense }) {
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <div>
-        <label className="block text-sm font-semibold text-cyan-300 mb-2">
+        <label className="block mb-2 text-sm font-semibold text-cyan-300">
           Amount (₹)
         </label>
         <input
@@ -99,14 +99,14 @@ export default function ExpenseForm({ onAddExpense }) {
           }`}
         />
         {errors.amount && (
-          <p className="text-red-400 text-sm mt-2 font-medium">
+          <p className="mt-2 text-sm font-medium text-red-400">
             {errors.amount}
           </p>
         )}
       </div>
 
       <div>
-        <label className="block text-sm font-semibold text-cyan-300 mb-2">
+        <label className="block mb-2 text-sm font-semibold text-cyan-300">
           Category
         </label>
         <select
@@ -126,14 +126,14 @@ export default function ExpenseForm({ onAddExpense }) {
           ))}
         </select>
         {errors.category && (
-          <p className="text-red-400 text-sm mt-2 font-medium">
+          <p className="mt-2 text-sm font-medium text-red-400">
             {errors.category}
           </p>
         )}
       </div>
 
       <div>
-        <label className="block text-sm font-semibold text-cyan-300 mb-2">
+        <label className="block mb-2 text-sm font-semibold text-cyan-300">
           Date
         </label>
         <input
@@ -148,12 +148,12 @@ export default function ExpenseForm({ onAddExpense }) {
           }`}
         />
         {errors.date && (
-          <p className="text-red-400 text-sm mt-2 font-medium">{errors.date}</p>
+          <p className="mt-2 text-sm font-medium text-red-400">{errors.date}</p>
         )}
       </div>
 
       <div>
-        <label className="block text-sm font-semibold text-cyan-300 mb-2">
+        <label className="block mb-2 text-sm font-semibold text-cyan-300">
           Note (Optional)
         </label>
         <textarea
@@ -162,13 +162,13 @@ export default function ExpenseForm({ onAddExpense }) {
           onChange={handleChange}
           placeholder="Add a note about this expense"
           rows="2"
-          className="w-full px-4 py-3 bg-slate-800 border-2 border-cyan-500/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 resize-none text-white placeholder-slate-500"
+          className="w-full px-4 py-3 text-white transition-all duration-300 border-2 rounded-lg resize-none bg-slate-800 border-cyan-500/50 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 placeholder-slate-500"
         />
       </div>
 
       <button
         type="submit"
-        className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-lg hover:shadow-cyan-500/50 hover:shadow-2xl text-base tracking-wide"
+        className="w-full px-4 py-3 text-base font-bold tracking-wide text-white transition duration-300 rounded-lg shadow-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 hover:shadow-cyan-500/50 hover:shadow-2xl"
       >
         Add Expense
       </button>

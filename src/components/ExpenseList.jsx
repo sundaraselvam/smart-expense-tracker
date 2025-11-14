@@ -45,7 +45,7 @@ export default function ExpenseList({ expenses, onDeleteExpense }) {
   }
 
   return (
-    <div className="space-y-4 max-h-96 overflow-y-auto pr-2">
+    <div className="space-y-4 max-h-[65vh] sm:max-h-[60vh] overflow-y-auto pr-1 sm:pr-2">
       {sortedDates.map((date) => (
         <div key={date}>
           <h3 className="text-xs font-black text-orange-400 mb-3 px-3 uppercase tracking-widest">
