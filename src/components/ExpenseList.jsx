@@ -38,7 +38,7 @@ export default function ExpenseList({ expenses, onDeleteExpense }) {
 
   if (expenses.length === 0) {
     return (
-      <div className="text-center py-12 text-orange-300">
+      <div className="py-12 text-center text-orange-300">
         <p className="text-lg font-semibold">No expenses to display</p>
       </div>
     );
@@ -48,22 +48,22 @@ export default function ExpenseList({ expenses, onDeleteExpense }) {
     <div className="space-y-4 max-h-[65vh] sm:max-h-[60vh] overflow-y-auto pr-1 sm:pr-2">
       {sortedDates.map((date) => (
         <div key={date}>
-          <h3 className="text-xs font-black text-orange-400 mb-3 px-3 uppercase tracking-widest">
+          <h3 className="px-3 mb-3 text-xs font-black tracking-widest text-orange-400 uppercase">
             {date}
           </h3>
           <div className="space-y-2">
             {groupedExpenses[date].map((expense) => (
               <div
                 key={expense.id}
-                className="flex items-center justify-between bg-gradient-to-r from-slate-800 to-slate-800/50 p-4 rounded-lg border-l-4 border-orange-500 hover:from-slate-700 hover:to-slate-700/50 hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300"
+                className="flex items-center justify-between p-4 transition-all duration-300 border-l-4 border-orange-500 rounded-lg bg-gradient-to-r from-slate-800 to-slate-800/50 hover:from-slate-700 hover:to-slate-700/50 hover:shadow-lg hover:shadow-orange-500/20"
               >
-                <div className="flex items-center gap-4 flex-1">
+                <div className="flex items-center flex-1 gap-4">
                   <div className="text-3xl">
                     {CATEGORY_EMOJIS[expense.category] || "📌"}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <p className="font-bold text-orange-300 text-sm">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <p className="text-sm font-bold text-orange-300">
                         {expense.category}
                       </p>
                       {expense.note && (
@@ -72,12 +72,6 @@ export default function ExpenseList({ expenses, onDeleteExpense }) {
                         </p>
                       )}
                     </div>
-                    <p className="text-xs text-slate-500 font-medium mt-1">
-                      {new Date(expense.date).toLocaleTimeString("en-IN", {
-                        hour: "2-digit",
-                        minute: "2-digit",
-                      })}
-                    </p>
                   </div>
                 </div>
 
@@ -89,7 +83,7 @@ export default function ExpenseList({ expenses, onDeleteExpense }) {
                   </div>
                   <button
                     onClick={() => onDeleteExpense(expense.id)}
-                    className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-500 hover:to-pink-500 text-white px-3 py-2 rounded-lg transition duration-300 text-xs font-bold shadow-lg hover:shadow-red-500/50"
+                    className="px-3 py-2 text-xs font-bold text-white transition duration-300 rounded-lg shadow-lg bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-500 hover:to-pink-500 hover:shadow-red-500/50"
                   >
                     Delete
                   </button>
