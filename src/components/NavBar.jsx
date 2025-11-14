@@ -37,7 +37,7 @@ export default function NavBar() {
               💰
             </div>
             <span className="text-xl font-black sm:text-2xl neon-text whitespace-nowrap">
-              Smart Expense Tracker
+              Smarter Expense Tracker
             </span>
           </Link>
           <ul className="nav-links flex-row items-center justify-center md:justify-end min-h-[60px] w-full md:w-auto">
