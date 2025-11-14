@@ -31,7 +31,7 @@ export default function NavBar() {
   return (
     <nav className="sticky top-0 z-50 backdrop-blur-xl border-b border-cyan-500/30 bg-[#050510]/90 shadow-[0_0_30px_rgba(34,211,238,0.25)]">
       <div className="container px-4 py-4 mx-auto">
-        <div className="flex flex-row items-center justify-between gap-12">
+        <div className="nav-container">
           <Link to="/" className="flex items-center gap-3 group">
             <div className="text-3xl sm:text-4xl group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_6px_#f0f]">
               💰
@@ -40,7 +40,7 @@ export default function NavBar() {
               Smarter Expense Tracker
             </span>
           </Link>
-          <ul className="nav-links flex-row items-center justify-center md:justify-end min-h-[60px] w-full md:w-auto">
+          <ul className="nav-links-list">
             {[
               [
                 "/",
@@ -60,11 +60,8 @@ export default function NavBar() {
                 FaListAlt,
                 "bg-orange-500/15 border border-orange-400/40 hover:bg-orange-500/25",
               ],
-            ].map(([to, label, Icon, color], idx, arr) => (
-              <li
-                key={to}
-                className={`list-none ${idx < arr.length - 1 ? "mr-12" : ""}`}
-              >
+            ].map(([to, label, Icon, color]) => (
+              <li key={to} className="list-none">
                 {navItem(to, label, Icon, color)}
               </li>
             ))}
